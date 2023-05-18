@@ -1,0 +1,94 @@
+.container {
+  position: relative;
+
+}
+
+.title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+
+  display: flex;
+  align-items: center;
+
+  color: #FFFFFF;
+  padding-bottom: 18px;
+}
+
+.name {
+  padding-top: 10px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  display: flex;
+  align-items: center;
+
+  color: #D9D7E0;
+}
+
+.subscription {
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* or 133% */
+
+  display: flex;
+  align-items: center;
+
+  color: #EA003D;
+
+}
+
+.mySwiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.mySlider {
+  width: 155px;
+  height: 235px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  overflow: hidden;
+
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.button {
+  position: absolute;
+  left: 24px;
+  bottom: 45px;
+}
+
+.buttonWrapper {
+  top: 45%;
+  left: 5px;
+  width: calc(100% - 10px);
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10000;
+  @media (min-width: 1200px) {
+    /*max-width: 1190px;
+    width: 1190px;*/
+
+  }
+}

@@ -1,0 +1,22 @@
+.appBar{
+  color: #ffffff
+}
+
+.logo{
+  display: flex;
+  align-content: center;
+}
+
+.navText{
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.48);
+  text-decoration: none;
+  text-transform:Capitalize;
+}
+.MuiBox-root{
+  button:hover{
+    color:white;
+  }
+}

@@ -1,0 +1,85 @@
+/*.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  !* Center slide text vertically *!
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}*/
+
+.mySwiper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.mySlider {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.image {
+  width: 100%;
+  border-radius: 16px;
+  @media (min-width: 1200px) {
+    width: 1152px;
+    border-radius: 16px;
+  }
+
+}
+
+.button {
+  position: absolute;
+  left: 24px;
+  bottom: 45px;
+}
+
+.buttonWrapper {
+  width: calc(100% - 20px);
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10000;
+  @media (min-width: 1200px) {
+    max-width: 1190px;
+    width: 1190px;
+
+  }
+}
+
+
+/*.prevArrow {
+  position: absolute;
+  left: 5px;
+  z-index: 100;
+  background: transparent;
+}
+
+.nextArrow {
+  !*position: absolute;
+  right: 5px;*!
+  z-index: 100;
+  background: transparent;
+}*/
