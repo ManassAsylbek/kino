@@ -47,7 +47,7 @@ function ResponsiveAppBar() {
 
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
-    const handleClick:T = (event: T) => {
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         if (event.currentTarget.id === 'Фильмы') {
             setAnchorEl(event.currentTarget);
         }
@@ -141,10 +141,10 @@ function ResponsiveAppBar() {
                     </Box>
                 </Toolbar>
 
-                {open && <div onMouseEnter={handleClick}
+                {/*{open && <div onMouseEnter={handleClick}
                               onMouseLeave={handleClose}
                               style={{maxWidth: "1200px", width: "100%", background: "red"}}> hello
-                </div>}
+                </div>}*/}
             </Container>
         </AppBar>
     );

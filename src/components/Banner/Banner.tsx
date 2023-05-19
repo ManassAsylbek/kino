@@ -13,22 +13,24 @@ import Box from "@mui/material/Box";
 import {ColorButton} from "../Button/CustomButton";
 import SwiperButtonPrev from "./SwiperButtonPrev";
 import SwiperButtonNext from "./SwiperButtonNext";
+import {movieAPI} from "../../services/movieServices";
+import {IMovie} from "../../interfaces";
 
 
 
 const Banner = () => {
-
+const [movie,setMovie]=useState<IMovie[]>([])
     const navigationPrevRef = React.useRef(null)
     const navigationNextRef = React.useRef(null)
 
+    const { data, error, isLoading } = movieAPI.useFetchAllTodoListQuery({type: ['movie']});
+    if(data){
+        console.log(data)
+    }
 
     return (
         <Swiper
-           /* navigation={{
-                prevEl: navigationPrevRef.current,
-                nextEl: navigationNextRef.current,
-            }}
-*/
+
             breakpoints={{
 
                 0: {
@@ -48,52 +50,28 @@ const Banner = () => {
                     spaceBetween: 24,
                 },
             }}
-            /*    autoplay={{
+                autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
-                }}*/
+                }}
             loop={true}
             mousewheel={true}
             centeredSlides={true}
             modules={[Pagination, Navigation, Mousewheel, Keyboard]}
             className={s.mySwiper}
         >
-            <SwiperSlide>
-                <Box className={s.mySlider}>
-                    <img className={s.image}
-                         src="https://www.shutterstock.com/image-illustration/farmland-rural-cartoon-landscape-600w-705725146.jpg"
-                         alt=""/>
-                </Box>
-                <ColorButton sx={{p: "9px 15px"}} className={s.button}>Показать подборку</ColorButton>
+            {data && data.docs.map(item=>(
+                <SwiperSlide>
+                    <Box className={s.mySlider}>
+                        <img className={s.image}
+                             src={item.poster.previewUrl}
+                             alt=""/>
+                    </Box>
+                    <ColorButton sx={{p: "9px 15px"}} className={s.button}>Показать подборку</ColorButton>
 
-            </SwiperSlide>
-            <SwiperSlide>
-                <Box className={s.mySlider}>
-                    <img className={s.image}
-                         src="https://www.shutterstock.com/image-illustration/farmland-rural-cartoon-landscape-600w-705725146.jpg"
-                         alt=""/>
-                </Box>
-                <ColorButton sx={{p: "9px 15px"}} className={s.button}>Показать подборку</ColorButton>
+                </SwiperSlide>
+            ))}
 
-            </SwiperSlide>
-            <SwiperSlide>
-                <Box className={s.mySlider}>
-                    <img className={s.image}
-                         src="https://www.shutterstock.com/image-illustration/farmland-rural-cartoon-landscape-600w-705725146.jpg"
-                         alt=""/>
-                </Box>
-                <ColorButton sx={{p: "9px 15px"}} className={s.button}>Показать подборку</ColorButton>
-
-            </SwiperSlide>
-            <SwiperSlide>
-                <Box className={s.mySlider}>
-                    <img className={s.image}
-                         src="https://www.shutterstock.com/image-illustration/farmland-rural-cartoon-landscape-600w-705725146.jpg"
-                         alt=""/>
-                </Box>
-                <ColorButton sx={{p: "9px 15px"}} className={s.button}>Показать подборку</ColorButton>
-
-            </SwiperSlide>
 
             <Box sx={{display: {xs: 'none', md: 'flex'}}} className={s.buttonWrapper}>
                 <SwiperButtonPrev><img src={prev} alt=""/></SwiperButtonPrev>
